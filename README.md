@@ -26,7 +26,6 @@ ghcr.io/lablabs/bottlerocket-registry-auth-helper:<$release-version>
   - `pr<$PR-number>`, e.g. `pr2`
   - `<$commit-sha>`, e.g. `23523572395472943572934552452352`
 - main
-  - `v<$release-version>`, e.g. `v0.24.1-v2-debian`
   - `<$release-version>` it is taken from tag name created
 
 ## How to update
