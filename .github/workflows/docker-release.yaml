@@ -34,7 +34,7 @@ jobs:
             ghcr.io/lablabs/bottlerocket-registry-auth-helper
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=${{ GITHUB_REF_NAME }}
+            type=raw,value=${{ github.ref.name }}
 
       - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v3
