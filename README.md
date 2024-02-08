@@ -6,14 +6,25 @@ We help companies build, run, deploy and scale software and infrastructure by em
 ---
 
 ## Description
-Custom AWS bottlerocket Docker image repository.
+Custom AWS bottlerocket Docker image repository. For interaction with AWS secret manager
 
 Extra functionality:
 - AWS CLI
 - jq
 
 ## Usage
-Docker image used in bootstrap container to interact with AWS.
+Docker image used in bootstrap container to interact with AWS. As argument it takes json file where secret ID and AWS region is specified. Bootstrap container then load data from
+AWS secret manager to bottlerocket configuration. One of the use cases is load credentials data for registry mirror.
+
+Argument passed for correct usage:
+
+`{"config":{"awsregion":"AWSREGION","awssecretid":"AWSSECRETID"}}`
+
+
+Data stored in AWS secret has format accepted by bottlerocket apiclient. i.e.
+
+`{"container-registry":{"credentials":[{"registry":"docker.io","username":"someusername","password":"somepassword"}]}}`
+
 
 Available images are located here https://github.com/lablabs/bottlerocket-registry-auth-helper/pkgs/container/bottlerocket-registry-auth-helper.
 - Specific released version:
